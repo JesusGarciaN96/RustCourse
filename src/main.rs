@@ -17,6 +17,18 @@ fn tipo_datos() {
 
     let rust_emoji: char = '🦀';
     println!("Mascota Rust: {}", rust_emoji);
+
+    // Las tuplas se pueden desestructurar (como en JS)
+    let datos_personales: (&str, char, i32) = ("Programador", 'H', 27);
+    let (puesto, genero, edad) = datos_personales;
+    println!(
+        "La persona es {} es de genero {} y tiene {} años",
+        puesto, genero, edad
+    );
+    println!("Puesto: {}", datos_personales.0);
+
+    let edades: [i32; 3] = [12, 16, 21];
+    println!("Primer edad: {}", edades[0]);
 }
 
 #[allow(dead_code)]

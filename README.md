@@ -47,10 +47,12 @@ Los números flotantes solo soportan tamaño de 32 y 64 bits y estos pueden alma
 Los tipos caracteres en Rust se usan con la palabra reservada `char` y tienen una longitud de 4 bytes. A diferencia de otros lenguajes que solo usan 1 byte (8 bits). Esto permite almacenar cualquier valor unicode incluyendo emojis 🦀.
 
 - Tipos compuestos:
-  - Tuplas 👉 
-  - Array 👉 
+  - Tuplas 👉 `(f32, char, &str, bool)`
+  - Array 👉 `[i32, i32, i32]`
 
-Las tuplas tienen un tamaño definido y son inmutables, en cambio pueden almacenar datos de diferentes tipos...
+Las tuplas tienen un tamaño definido y son inmutables, en cambio pueden almacenar datos de diferentes tipos. Estas se pueden desestructurar como en `js` para acceder a sus elementos.
+
+Los Array es un colección de elementos con el mismo tipo de datos, un tamaño definido y su longitud no se puede cambiar.
 
 Ejemplos tipos de datos:
 ``` rust
@@ -59,5 +61,20 @@ let numero_gigante: i128 = 1245666;
 let numero_decimal: f32 = -12.2;
 let es_falso: bool = false;
 let rust_emoji: char = '🦀';
+
+// Tipo compuesto (tupla)
+let datos_personales: (&str, char, i32) = ("Programador", 👨‍💻, 27);
+let (puesto, genero, edad) = datos_personales;
+println!(
+	"La persona es {} es de genero {} y tiene {} años",
+	puesto, genero, edad
+);
+
+// Acceso a un elemento especifico de la tupla
+println!("Puesto: {}", datos_personales.0);
+
+// Tipo compuesto (array)
+let edades: [i32; 3] = [12, 16, 21];
+println!("Primer edad: {}", edades[0]);
 ```
 ## Funciones 📚👨‍💻
