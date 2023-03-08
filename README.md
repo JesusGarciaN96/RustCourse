@@ -4,13 +4,13 @@ Para nombrar variables en Rust, se usa la palabra reservada `let`. Por defecto l
 
 Para escribir sobreescribir una variable se usa la palabra reservada `mut` después de `let`.
 
-```
-let nombre = "Jesús";	// Variable tipica en Rust
-let mut nombreCompleto = "Jesús Alejandro"; // Permite sobreescribir la variable 
+``` rust
+let nombre = "Jesús";
+let mut nombreCompleto = "Jesús Alejandro"; 
 ```
 Se pueden tener dos variables con el mismo nombre. Los tipos de datos se pueden omitir pues el lenguaje los infiere dependiendo el valor que se le asigne pero también es posible asignar un tipo de dato.
 
-```
+``` rust
 let valor = "Juan";
 let valor = 12;
 
@@ -21,7 +21,43 @@ En este caso 🙋‍♂️ tendremos un error debido a que se toma la segunda va
 
 Las constantes se declaran con la palabra reservada `const` y estas como en otros lenguajes la convesión es que el nombre sea en mayusculas (Rust te obliga a hacer lo) y deben tener un tipo de dato, no se infiere como en las variables.
 
-```
+``` rust
 const PI: f32 = 3.1416;
 println!("valor de Pi: {}", PI);
 ```
+
+## Tipos de datos 🧮
+En Rust existen diferentes tipos de datos:
+- Enteros:
+  - Entero con signo 👉 `i8 al i128`
+  - Entero sin signo 👉 `u8 al i128`
+
+Los números enteros se definen con la cantidad de bits que le corresponde (depende del tamaño del número a almacenar), el limite son 128 bits.
+
+- Flotantes:
+  - Flotante con o sin signo 👉 `f32 y f64`
+
+Los números flotantes solo soportan tamaño de 32 y 64 bits y estos pueden almacenar valores con o sin signo.
+
+- Boolean:
+  - Boolean 👉 `bool`
+- Caracter:
+  - Character 👉 `char`.
+
+Los tipos caracteres en Rust se usan con la palabra reservada `char` y tienen una longitud de 4 bytes. A diferencia de otros lenguajes que solo usan 1 byte (8 bits). Esto permite almacenar cualquier valor unicode incluyendo emojis 🦀.
+
+- Tipos compuestos:
+  - Tuplas 👉 
+  - Array 👉 
+
+Las tuplas tienen un tamaño definido y son inmutables, en cambio pueden almacenar datos de diferentes tipos...
+
+Ejemplos tipos de datos:
+``` rust
+let edad: i32 = 27;
+let numero_gigante: i128 = 1245666;
+let numero_decimal: f32 = -12.2;
+let es_falso: bool = false;
+let rust_emoji: char = '🦀';
+```
+## Funciones 📚👨‍💻
