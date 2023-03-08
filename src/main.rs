@@ -28,7 +28,10 @@ fn tipo_datos() {
     println!("Puesto: {}", datos_personales.0);
 
     let edades: [i32; 3] = [12, 16, 21];
+    let emojis: [char; 4] = ['🍌'; 4];
+
     println!("Primer edad: {}", edades[0]);
+    println!("tercer banana {}", emojis[2]);
 }
 
 #[allow(dead_code)]

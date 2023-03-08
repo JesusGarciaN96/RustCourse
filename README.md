@@ -76,5 +76,8 @@ println!("Puesto: {}", datos_personales.0);
 // Tipo compuesto (array)
 let edades: [i32; 3] = [12, 16, 21];
 println!("Primer edad: {}", edades[0]);
+
+// Array con el mismo dato repetido N veces -> [👨‍💻, 👨‍💻, 👨‍💻, 👨‍💻, 👨‍💻]
+let caracteres = [👨‍💻; 5];
 ```
 ## Funciones 📚👨‍💻
