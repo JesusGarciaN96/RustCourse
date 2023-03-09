@@ -1,7 +1,53 @@
 fn main() {
-    tipo_datos();
+	bucles();
 }
 
+// Bucles en Rust
+fn bucles(){
+	let mut contador: i32 = 1;
+	loop {
+		if contador > 10 {
+			break;
+		}
+		println!("El contador es: {}", contador);
+		contador = contador + 1;
+	}
+
+	let mut segundo_contador: i32 = 0;
+	let elementos: [i32; 5] = [3, 45, 23, 12, 9];
+	while segundo_contador < 5 {
+		println!("El elemento: {}",  elementos[segundo_contador as usize]);
+		segundo_contador += 1;
+	}
+}
+
+// Condiciones IF en Rust
+#[allow(dead_code)]
+fn condiciones(edad_persona: i32){
+	if edad_persona > 18 {
+		println!("Eres mayor de edad");
+	}
+	else {
+		println!("No tienes acceso al sistema");
+	}
+
+	// Condición en una linea
+	let es_mayor: bool = if edad_persona > 18 { true } else { false };
+	println!("{}", es_mayor);
+}
+
+// Funciones en Rust
+#[allow(dead_code)]
+fn suma(primer_valor: i32, segundo_valor: i32) -> i32 {
+	return primer_valor + segundo_valor;
+}
+
+#[allow(dead_code)]
+fn saludo_persona(nombre: &str) -> &str {
+	nombre
+}
+
+#[allow(dead_code)]
 fn tipo_datos() {
     let edad: i32 = 27;
     println!("La edad: {}", edad);

@@ -1,16 +1,19 @@
 # Anotaciones Rust 🦀
+
 ## Variables y Constantes 📓
+
 Para nombrar variables en Rust, se usa la palabra reservada `let`. Por defecto las variables son inmutables y estas no se pueden cambiar después de definirse solo son "readonly".
 
 Para escribir sobreescribir una variable se usa la palabra reservada `mut` después de `let`.
 
-``` rust
+```rust
 let nombre = "Jesús";
-let mut nombreCompleto = "Jesús Alejandro"; 
+let mut nombreCompleto = "Jesús Alejandro";
 ```
+
 Se pueden tener dos variables con el mismo nombre. Los tipos de datos se pueden omitir pues el lenguaje los infiere dependiendo el valor que se le asigne pero también es posible asignar un tipo de dato.
 
-``` rust
+```rust
 let valor = "Juan";
 let valor = 12;
 
@@ -21,13 +24,15 @@ En este caso 🙋‍♂️ tendremos un error debido a que se toma la segunda va
 
 Las constantes se declaran con la palabra reservada `const` y estas como en otros lenguajes la convesión es que el nombre sea en mayusculas (Rust te obliga a hacer lo) y deben tener un tipo de dato, no se infiere como en las variables.
 
-``` rust
+```rust
 const PI: f32 = 3.1416;
 println!("valor de Pi: {}", PI);
 ```
 
 ## Tipos de datos 🧮
+
 En Rust existen diferentes tipos de datos:
+
 - Enteros:
   - Entero con signo 👉 `i8 al i128`
   - Entero sin signo 👉 `u8 al i128`
@@ -55,7 +60,8 @@ Las tuplas tienen un tamaño definido y son inmutables, en cambio pueden almacen
 Los Array es un colección de elementos con el mismo tipo de datos, un tamaño definido y su longitud no se puede cambiar.
 
 Ejemplos tipos de datos:
-``` rust
+
+```rust
 let edad: i32 = 27;
 let numero_gigante: i128 = 1245666;
 let numero_decimal: f32 = -12.2;
@@ -80,4 +86,89 @@ println!("Primer edad: {}", edades[0]);
 // Array con el mismo dato repetido N veces -> [👨‍💻, 👨‍💻, 👨‍💻, 👨‍💻, 👨‍💻]
 let caracteres = [👨‍💻; 5];
 ```
+
 ## Funciones 📚👨‍💻
+
+Las funciones en Rust 🦀 se incian con la palabra reservada `fn` seguido del nombre de la función y abrimos, cerramos llaves. Es igual que la función `main` del proyecto que se generó con cargo.
+
+```Rust
+fn main(){
+	saludo();
+}
+
+fn saludo(){
+	println!("Hola, mundo");
+}
+```
+
+También se pueden pasar parámetros en las funciones y definir el tipo de dato que va a retornar, en cambio si no colocamos un `return` al final de la función pero definimos el tipo de retorno de nuestra función nos retornará la última línea siempre y cuando corresponda al tipo de retorno.
+
+```Rust
+fn main(){
+	println!("{}", operacion_producto(12, 25));
+	println!("{}", saludo("Juan"));
+}
+
+fn operacion_producto(primero: i32, segundo: i32) -> i32 {
+	return primero * segundo;
+}
+
+// Se omite el return porque la última línea es del tipo de retorno
+// y se puede omitir "return"
+fn saludo(nombre: &str) -> &str {
+	nombre;
+}
+```
+
+## Condiciones ⚖️
+
+La condición `if` en Rust es similar a cualquier otro lenguaje:
+
+```Rust
+let edad: i32 = 24;
+if edad > 18 {
+	println!("Tienes acceso");
+}
+else {
+	println!("No tienes acceso);
+}
+```
+
+Al igual que en otros lenguajes existen las condiciones a una línea o en su defecto operación ternaria, en Rust se puede definir de la siguiente manera:
+
+```Rust
+let es_mayor: bool = if edad_persona > 18 { true } else { false };
+println!("{}", es_mayor);
+```
+
+Entre llaves se coloca el valor a retornar pero omitiendo la palabra `return` y el valor devuelto se almacena en una variable (igual que las operaciones ternarias en otros lenguajes).
+
+## Bucles (Ciclos) ♻️
+
+Existe un bucle "especial" en Rust que se llama `loop`, este crea un bucle infinito y solo se puede detener mediante un `break`. Normalmente se maneja mediante una condición y un contador (así como un while o do while en varios lenguajes) y se ve de la siguiente manera:
+
+```Rust
+let mut contador: i32 = 1;
+loop {
+	if contador > 10 {
+		break;
+	}
+	println!("El contador es: {}", contador);
+	contador = contador + 1;
+}
+```
+
+El bucle se ejecuta hasta que el contador llegue a 10 y después de eso se rompe y termina su ejecución, mientras el contador no llegue a su limite imprimirá el valor actual del contador.
+
+Existe el ciclo while que funciona como en otros lenguajes:
+
+```Rust
+let mut segundo_contador: i32 = 0;
+let elementos: [i32; 5] = [3, 45, 23, 12, 9];
+while segundo_contador < 5 {
+	println!("El elemento: {}",  elementos[segundo_contador as usize]);
+	segundo_contador += 1;
+}
+```
+
+NOTA: el tipo `usize` indica que...
