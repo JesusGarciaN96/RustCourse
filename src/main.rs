@@ -19,6 +19,21 @@ fn bucles(){
 		println!("El elemento: {}",  elementos[segundo_contador as usize]);
 		segundo_contador += 1;
 	}
+
+    // El método iter() permite crear el array en "iterador" para poder
+    // usarlo en un bucle for in
+    let cadenas: [&str; 3] = ["Juan", "Diana", "Pedro"];
+    for nombre in cadenas.iter(){
+        println!("El nombre es: {}", nombre)
+    }
+
+    // Iteración por rangos
+    // La iteación por rango es similar a Ruby 1..10 (va del 0 al 9)
+    // Si que queremos incluir el valor "10" usamos 1..=10
+    // Para hacerlo de manera invertida se encapsula el rango (1..=10).rev()
+    for valor in (1..=10).rev() {
+        println!("El valor: {}", valor);
+    }
 }
 
 // Condiciones IF en Rust
